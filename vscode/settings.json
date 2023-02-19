@@ -2,5 +2,32 @@
     "workbench.colorTheme": "Default Dark+",
     "editor.inlineSuggest.enabled": true,
     "terminal.integrated.scrollback": 1000000,
-    "terminal.integrated.shellArgs.linux": ["--init-file", "init.sh"]
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash",
+            "args": [
+                "-l",
+                // "-c",
+                // "source ~/init.sh; bash"
+            ]
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux",
+            // "args": ["-l"]
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash"
 }
