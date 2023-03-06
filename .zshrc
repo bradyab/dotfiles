@@ -2,19 +2,28 @@
 # export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 
 # git
-alias gco="git checkout"
-alias gnb="git checkout -b"
+alias gco="git fetch && git checkout"
+alias gnb="git fetch && git checkout -b"
 alias ga="git add"
 alias push="git push"
 alias pull="git pull"
 alias fwl="git push --force-with-lease"
 alias gaa="git add ."
 alias gst="git status"
-alias gcm="git commit -m"
-alias grc="git rebase --continue"
+# alias gcm="git commit -m $@ && git push"
+function gcm() {
+    git commit -m "$1"
+    git push
+}
+alias grc="git fetch && git rebase --continue"
+alias merge="git fetch && git merge"
 alias log="git log --oneline"
 alias last="git log -1 HEAD --stat"
 alias startgit='cd `git rev-parse --show-toplevel` && git checkout master && git pull'
+alias inst='cd ui; pnpm install; gco origin/tom/layout vite.config.js; pnpm dev'
+alias dev='cd ui; gco origin/tom/layout vite.config.js; pnpm dev'
+alias pret='cd ui; pnpm prettier'
+alias port='cd ~/portal-branches/development'
 alias cg='cd `git rev-parse --show-toplevel`'
 
 # bash
